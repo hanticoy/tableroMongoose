@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablero Animales</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    
+    <main class="contenedor">
+        
+        <article class="linea">
+            <h1>Editar Animal</h1>
+            <form id="formulario" method="post">
+            <table class="Datos">
+                <tr>
+                    <td><b>Name(*)</b></td>
+                    <td><%=animals[0].name%> <input type="hidden" name="name" id="name" value="<%=animals[0].name%>"></td>
+                </tr>
+                <tr>
+                    <td><b>Type Animal(*)</b></td>
+                    <td><select class="campo"  name="typeanimal" id="typeanimal" value="<%=animals[0].typeanimal%>">
+                        <option value="">Seleccione tipo animal</option>
+                        <option value="grulla">Grulla</option>
+                        <option value="perro">Perro</option>
+                        <option value="gato">Gato</option>
+                    </select></td>
+                </tr>
+                <tr>
+                    <td><b>Age(*)</b></td>
+                    <td><input class="campo" type="text" name="age" id="age" value="<%=animals[0].age%>"></td>
+                </tr>
+            </table>
+            </form>
+        </article>
+        <article>
+            <% for (var x in errores) { %>
+                <h4><%= errores[x] %></h4>
+            <% } %>
+        </article>
+        <article  class="lineabtn">
+            <div><button id="actualizar">Actualizar!</button></div>
+            <div><button id="volver">Volver!</button></div>
+        </article>
+    </main>
+    <script src="../js/script-saveeditar.js"></script>
+</body>
+</html>

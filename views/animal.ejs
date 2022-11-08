@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablero Animales</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <main class="contenedor">
+        <form id="formulario">
+        <article class="linea">
+            <h1>Detalle Animal</h1>
+            <table class="Datos">
+                <% for (var x in animals) { %>
+                    <tr>
+                        <td><b class="nombreAnimal"><%= animals[x].name %></b></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><b class="detail">Type:<%= animals[x].typeanimal %></b> 
+                            <br>Edad:<%= animals[x].age %>
+                            <br>Creado el: <%= animals[x].createdAt %>
+                        </td>
+                    </tr>
+                <% } %>
+                
+            </table>
+        </article>
+        <article  class="lineabtn">
+            <div><button id="volver">Volver!</button></div>
+        </article>
+    </form>
+    </main>
+    <script src="../js/script-animal.js"></script>
+</body>
+</html>

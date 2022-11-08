@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablero Animales</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <main class="contenedor">
+        <form id="formulario">
+            <article class="linea">
+                <h1>Animales Registrados</h1>
+                <table class="Datos">
+                    <% for (var x in animals) { %>
+                        <tr>
+                            <td><b class="titulo"><%= animals[x].name %></b></td>
+                            <td><a id="linkEditar" name="<%=animals[x].name %>"><img src="img/editar.webp" class="editar" ></a>
+                                <a id="linkVer" name="<%=animals[x].name %>"><img src="img/ver.webp" class="editar" ></a>
+                                <a id="linkEliminar" name="<%=animals[x].name %>"><img src="img/elimina.jpg" class="editar" ></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><b class="detail">Type:<%= animals[x].typeanimal %></b> 
+                                <br>Edad:<%= animals[x].age %>
+                                <br>Creado el: <%= animals[x].createdAt %>
+                            </td>
+                        </tr>
+                    <% } %>                    
+                </table>
+            </article>
+            <article>
+                <% for (var x in errores) { %>
+                    <h4><%= errores[x] %></h4>
+                <% } %>
+            </article>
+            <article  class="lineabtn">
+                <div><button id="nuevo">Nuevo Animal!</button></div>
+                <!-- <div><button id="todos">Ver Todos!</button></div> -->
+            </article>
+        </form>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+</html>
